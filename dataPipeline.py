@@ -15,3 +15,4 @@ y = m * x + b
 #save to csv
 df = pd.DataFrame({"x": x, "y": y})
 df.to_csv("PipelineData.csv", index = False)
+
