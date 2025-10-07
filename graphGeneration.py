@@ -16,5 +16,6 @@ plt.scatter(x, y, label="Data")
 plt.plot(x, mFit*x+bFit, color = "red", label = "fitted line", linestyle = "--")
 plt.plot(x, m*x+b, color = "green", label = "original data",)
 plt.legend()
+plt.savefig("DataPipelinePlot.png")
 plt.show()
 
