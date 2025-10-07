@@ -11,9 +11,13 @@ mFit, bFit = np.polyfit(x, y, 1)
 m = 2
 b = 5
 
-#plot fitted data
+#plot data
 plt.scatter(x, y, label="Data")
+#adding error bars at twice starndard deviation of the noise
+plt.errorbar(x, mFit*x+bFit, yerr=20, fmt='none', ecolor='blue', capsize = 1, label = "error bars")
+#line of best fit
 plt.plot(x, mFit*x+bFit, color = "red", label = "fitted line", linestyle = "--")
+#original data 
 plt.plot(x, m*x+b, color = "green", label = "original data",)
 plt.legend()
 plt.savefig("DataPipelinePlot.png")

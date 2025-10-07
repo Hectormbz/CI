@@ -10,7 +10,7 @@ numPoints = 100
 x = np.linspace(0, 100, numPoints)
 
 #y values and noise
-noise = np.random.normal(0, 1, numPoints)
+noise = np.random.normal(0, 10, numPoints)
 y = m * x + b + noise
 
 #save to csv

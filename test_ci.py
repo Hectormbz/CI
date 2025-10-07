@@ -5,6 +5,7 @@ import numpy as np
 from Functions import increment
 class TestFunction(unittest.TestCase):
     
+    #unit tests for increment by 1 function
     def test_Increment(self):
         self.assertEqual(increment(5), 6)
         self.assertEqual(increment(-8), -7)
@@ -16,12 +17,14 @@ class TestFunction(unittest.TestCase):
     def test_GraphSaved(self):
         self.assertTrue(os.path.exists("DataPipelinePlot.png"))
 
+#testing that the data only contains numbers
     def test_ForNonNumericValues(self):
         df = pd.read_csv("PipelineData.csv")
         self.assertTrue(np.issubdtype(df["x"].dtype, np.number))
         self.assertTrue(np.issubdtype(df["y"].dtype, np.number))
 
-    def test_SlopeandInterceptClose(self):
+#testing that the gradient and y intercept values are as expected
+    def test_GradientandInterceptClose(self):
         df = pd.read_csv("PipelineData.csv")
         x = df["x"].values
         y = df["y"].values
